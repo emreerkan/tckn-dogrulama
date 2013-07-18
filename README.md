@@ -1,7 +1,9 @@
-tckno-dogrulama
-===============
+TC Kimlik No Doğrulama
+======================
 
 Nüfus ve Vatandaşlık İşleri Genel Müdürlüğü Web servisi üzerinden TC Kimlik Numarası doğrulaması yapan kod öbeği. Twitter Bootstrap ile güzelleştirilmiş ve sevgiyle yapılmıştır. ;)
+
+Phpfiddle üzerinden kodu çalıştırabilirsiniz. [Buraya](http://phpfiddle.org/main/code/mup-4qj) tıkladıktan sonra açılan sayfada F9 ya da *Run* bağlantısını kullanarak test edebilirsiniz.
 
 Kullanılan kütüphaneler;  
 
