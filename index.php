@@ -78,46 +78,46 @@ if(!empty($_POST)) {
 	</head>
 	<body>
 	    <div class="container">
-	      <div class="content">
-	        <div class="form">
-	        <h3>TC Kimlik No Doğrulama</h3>
-	        <form action="" method="post">
-	            <fieldset>
-	            	<div class="control-group">
-		                <div class="input-prepend">
-		                    <span class="add-on"><i class="icon-barcode"></i></span><input type="text" placeholder="TC Kimlik No" name="TCKimlikNo" id="TCKimlikNo" maxlength="11">
+	        <div class="content">
+	            <div class="form">
+	            <h3>TC Kimlik No Doğrulama</h3>
+	            <form action="" method="post">
+	                <fieldset>
+	                	<div class="control-group">
+		                    <div class="input-prepend">
+		                        <span class="add-on"><i class="icon-barcode"></i></span><input type="text" placeholder="TC Kimlik No" name="TCKimlikNo" id="TCKimlikNo" maxlength="11">
+		                    </div>
+	                    </div>
+	                    <div class="control-group">
+		                    <div class="input-prepend">
+		                        <span class="add-on"><i class="icon-user"></i></span><input type="text" placeholder="Ad" name="Ad" id="Ad">
+		                    </div>
+	                    </div>
+	                    <div class="control-group">
+		                    <div class="input-prepend">
+		                        <span class="add-on"><i class="icon-user"></i></span><input type="text" placeholder="Soyad" name="Soyad" id="Soyad">
+		                    </div>
+	                    </div>
+	                    <div class="control-group">
+		                    <div class="input-prepend">
+		                        <span class="add-on"><i class="icon-calendar"></i></span>
+		                        <select name="DogumYili" id="DogumYili" class="select2-input">
+		                        	<option></option>
+			    				<?php $years = range(date('Y', time()), 1900);
+			    				foreach($years as $year) {
+			    					echo sprintf('<option value="%1$d">%1$d</option>', $year);
+			    				}
+			    				?>
+		                        </select>
+		                    </div>
 		                </div>
-	                </div>
-	                <div class="control-group">
-		                <div class="input-prepend">
-		                    <span class="add-on"><i class="icon-user"></i></span><input type="text" placeholder="Ad" name="Ad" id="Ad">
-		                </div>
-	                </div>
-	                <div class="control-group">
-		                <div class="input-prepend">
-		                    <span class="add-on"><i class="icon-user"></i></span><input type="text" placeholder="Soyad" name="Soyad" id="Soyad">
-		                </div>
-	                </div>
-	                <div class="control-group">
-		                <div class="input-prepend">
-		                    <span class="add-on"><i class="icon-calendar"></i></span>
-		                    <select name="DogumYili" id="DogumYili" class="select2-input">
-		                    	<option></option>
-							<?php $years = range(date('Y', time()), 1900);
-							foreach($years as $year) {
-								echo sprintf('<option value="%1$d">%1$d</option>', $year);
-							}
-							?>
-		                    </select>
-		                </div>
-		            </div>
-	              	<span class="pull-right clear">
-	                	<button class="btn primary" type="submit"><i class="icon-search"></i> Sorgula</button>
-	              	</span>
-	            </fieldset>
-	        </form>
+	                  	<span class="pull-right clear">
+	                    	<button class="btn primary" type="submit"><i class="icon-search"></i> Sorgula</button>
+	                  	</span>
+	                </fieldset>
+	            </form>
+	            </div>
 	        </div>
-	      </div>
 	    </div>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
@@ -186,26 +186,26 @@ if(!empty($_POST)) {
 					}
 				},
 				checkTCKN = function(tck) {
-				  if (tck.length != 11) {
-				    return false;
-				  } else {
-				    var t1 = 0;
-				    for (i = 0; i < 9; i = i + 2) {
-				      t1 += parseInt(tck.substring(i, i + 1), 10)
+				    if (tck.length != 11) {
+				        return false;
+				    } else {
+				        var t1 = 0;
+				        for (i = 0; i < 9; i = i + 2) {
+				          t1 += parseInt(tck.substring(i, i + 1), 10)
+				        }
+				        var t2 = 0;
+				        for (i = 1; i < 8; i = i + 2) {
+				          t2 += parseInt(tck.substring(i, i + 1), 10)
+				        }
+				        var c10 = (10 - (((t1 * 3) + t2) % 10)) % 10;
+				        var c11 = (10 - ((((t2 + c10) * 3) + t1) % 10)) % 10;
+				        return tck.substring(9, 11) == c10.toString() + c11.toString();
 				    }
-				    var t2 = 0;
-				    for (i = 1; i < 8; i = i + 2) {
-				      t2 += parseInt(tck.substring(i, i + 1), 10)
-				    }
-				    var c10 = (10 - (((t1 * 3) + t2) % 10)) % 10;
-				    var c11 = (10 - ((((t2 + c10) * 3) + t1) % 10)) % 10;
-				    return tck.substring(9, 11) == c10.toString() + c11.toString();
-				  }
 				},
 				isNumber = function(n) {
 				    return !isNaN(parseFloat(n)) && isFinite(n);
 				};
-				$("select").select2({ placeholder: "Doğum yılınızı seçiniz" });
+				$("select").select2({ placeholder: "Doğum yılı" });
 				$('form').on('submit', function(e) {
 					e.preventDefault();
 					msg.show('start');
