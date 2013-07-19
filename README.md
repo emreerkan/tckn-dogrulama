@@ -11,3 +11,26 @@ Kullanılan kütüphaneler;
 * [Bootstrap](http://twitter.github.io/bootstrap/)
 * [select2](http://ivaynberg.github.io/select2/) 
 * [select2-bootstrap-css](https://github.com/t0m/select2-bootstrap-css)
+* [String Extensions](https://github.com/karalamalar/StringExtensions) (Sadece trimLeft fonksiyonu)
+
+Geçmiş
+======
+
+v1.1
+----
+
+* JavaScript olmadığında kodun çalışabilmesi için gerekli PHP kodları eklendi.
+* DOM'u kirletmemek için JavaScript değişkenleri tek bir global değişkende toplandı.
+* PHP tarafına TC Kimlik Numarasının algoritmik kontrolü eklendi.
+* JavaScript ile TC Kimlik numarası kontrolünü sağlayan metod geliştirildi.
+* Beyaz boşluklar düzenlendi.
+
+v1.0
+----
+
+* Kütüphaneler mümkünse CDN'den, değilse kodun içinten kullanılacak şekilde ayarlandı.
+* JavaScript form kontrolü eklendi.
+* TC Kimlik numarasının algoritmik kontrolü için JavaScript metodu eklendi.
+* Formun gönderilmesi sırasında araya girilerek isteğin AJAX ile yapılması sağlandı.
+* Sonuç mesajlarının gösterimi için `msg` nesnesi geliştirildi.
+* Bootstrap ile şık bir form hazırlandı.
