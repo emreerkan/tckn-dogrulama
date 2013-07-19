@@ -1,5 +1,4 @@
-TC Kimlik No Doğrulama
-======================
+# TC Kimlik No Doğrulama #
 
 Nüfus ve Vatandaşlık İşleri Genel Müdürlüğü Web servisi üzerinden TC Kimlik Numarası doğrulaması yapan kod öbeği. Twitter Bootstrap ile güzelleştirilmiş ve sevgiyle yapılmıştır. ;)
 
@@ -13,11 +12,9 @@ Kullanılan kütüphaneler;
 * [select2-bootstrap-css](https://github.com/t0m/select2-bootstrap-css)
 * [String Extensions](https://github.com/karalamalar/StringExtensions) (Sadece trimLeft fonksiyonu)
 
-Geçmiş
-======
+## Geçmiş ##
 
-v1.1
-----
+### v1.1 ###
 
 * JavaScript olmadığında kodun çalışabilmesi için gerekli PHP kodları eklendi.
 * DOM'u kirletmemek için JavaScript değişkenleri tek bir global değişkende toplandı.
@@ -25,8 +22,7 @@ v1.1
 * JavaScript ile TC Kimlik numarası kontrolünü sağlayan metod geliştirildi.
 * Beyaz boşluklar düzenlendi.
 
-v1.0
-----
+### v1.0 ###
 
 * Kütüphaneler mümkünse CDN'den, değilse kodun içinten kullanılacak şekilde ayarlandı.
 * JavaScript form kontrolü eklendi.

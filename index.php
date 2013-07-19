@@ -8,7 +8,7 @@ $messages = array (
     'svc-error' => array ( 'type' => 'error', 'heading' => 'Başarısız!', 'message' => 'Girmiş olduğunuz bilgilerin doğru olduğundan emin olun.' )
 );
 function checkTCKN($tckn) {
-    $exceptions = array( '00000000000', '11111111110', '22222222220', '33333333330', '44444444440', '55555555550', '66666666660', '77777777770', '88888888880', '99999999990' );
+    $exceptions = array( '11111111110', '22222222220', '33333333330', '44444444440', '55555555550', '66666666660', '77777777770', '88888888880', '99999999990' );
     $tckn = ltrim($tckn, '0');
     if ( !ctype_digit($tckn) || strlen($tckn) != 11 || array_search($tckn, $exceptions) > -1) {
         return false;
@@ -229,7 +229,7 @@ if(!empty($_POST)) {
                         }
                     },
                     checkTCKN : function(tckn) {
-                        var exceptions = [ '00000000000', '11111111110', '22222222220', '33333333330', '44444444440', '55555555550', '66666666660', '77777777770', '88888888880', '99999999990' ],
+                        var exceptions = [ '11111111110', '22222222220', '33333333330', '44444444440', '55555555550', '66666666660', '77777777770', '88888888880', '99999999990' ],
                             t1 = 0, t2 = 0, c10, c11;;
                         tckn = tckn.toString().trimLeft('0');
                         if ( !this.isNumber(tckn) || tckn.length != 11 || $.inArray( tckn, exceptions ) > -1 ) {
