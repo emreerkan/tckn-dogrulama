@@ -127,7 +127,7 @@ if(!empty($_POST)) {
                 <h3>TC Kimlik No Doğrulama</h3>
                 <?php if( isset( $result ) ) {
                     $msg = $messages[ $result ];
-                    echo sprintf('<div class="alert alert-%1$s"><a class="close" data-dismiss="alert" href="#">×</a><h4 class="alert-heading">%2$s</h4><p>%3$s</p></div>', $msg[ 'type' ], $msg[ 'heading' ], $msg[ 'message' ] );
+                    echo sprintf('<div class="alert alert-%1$s"><h4 class="alert-heading">%2$s</h4><p>%3$s</p></div>', $msg[ 'type' ], $msg[ 'heading' ], $msg[ 'message' ] );
                 } ?>
                 <form action="" method="post">
                     <fieldset>
